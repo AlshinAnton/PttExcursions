@@ -17,16 +17,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import ru.turpattaya.pttexcursions.fragment.AboutFragment;
+import ru.turpattaya.pttexcursions.fragment.ExcursionsFragment;
+import ru.turpattaya.pttexcursions.fragment.FreeTransfersFragment;
+import ru.turpattaya.pttexcursions.fragment.TaxiFragment;
+
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+
+    private ListView list;
+    private List<Excursion> data = new ArrayList<>();
+    private ExcursionAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +71,9 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -70,6 +84,11 @@ public class MainActivity extends AppCompatActivity
         adapter.addFragment(new AboutFragment(), "О нас");
 
         viewPager.setAdapter(adapter);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
     }
 
     static class ViewPagerAdapter extends FragmentPagerAdapter {

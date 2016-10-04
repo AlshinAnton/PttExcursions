@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ru.turpattaya.pttexcursions.TaxiFragment">
+    tools:context="ru.turpattaya.pttexcursions.fragment.TaxiFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

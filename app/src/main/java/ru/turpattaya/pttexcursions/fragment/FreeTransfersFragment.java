@@ -1,4 +1,4 @@
-package ru.turpattaya.pttexcursions;
+package ru.turpattaya.pttexcursions.fragment;
 
 
 import android.os.Bundle;
@@ -7,19 +7,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import ru.turpattaya.pttexcursions.R;
 
-public class ExcursionsFragment extends Fragment {
+
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class FreeTransfersFragment extends Fragment {
 
 
-    public ExcursionsFragment() {
+    public FreeTransfersFragment() {
         // Required empty public constructor
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_excursions, container, false);
+        return inflater.inflate(R.layout.fragment_free_transfers, container, false);
     }
 
 }
