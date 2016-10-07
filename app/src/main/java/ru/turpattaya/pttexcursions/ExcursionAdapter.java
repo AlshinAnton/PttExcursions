@@ -2,7 +2,7 @@ package ru.turpattaya.pttexcursions;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.net.Uri;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,14 +10,16 @@ import android.widget.CursorAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import ru.turpattaya.pttexcursions.fragment.ExcursionTable;
 
 
 public class ExcursionAdapter extends CursorAdapter {
 
 
-    public ExcursionAdapter(Context context, Cursor c, boolean flags) {
-        super(context, c, flags);
+    public ExcursionAdapter(Context context, Cursor c) {
+        super(context, c, 0);
     }
 
     @Override
@@ -28,23 +30,29 @@ public class ExcursionAdapter extends CursorAdapter {
         holder.imagePreview = (ImageView) row.findViewById(R.id.image_preview);
         holder.textExcursionPreview = (TextView) row.findViewById(R.id.text_excursion_preview);
         holder.textPricePreview = (TextView) row.findViewById(R.id.text_price_preview);
-        populateView(holder, cursor, context);
+        // populateView(holder, cursor, context);
 
         row.setTag(holder);
 
         return row;
 
     }
-    private void populateView(ViewHolder holder, Cursor cursor, Context context)
+    private void populateViewExcursion(ViewHolder holder, Cursor cursor, Context context)
     {
         holder.textExcursionPreview.setText(cursor.getString(cursor.getColumnIndex(ExcursionTable.COLUMN_EXCURSION_PAGETITLE)));
         holder.textPricePreview.setText(cursor.getString(cursor.getColumnIndex(ExcursionTable.COLUMN_EXCURSION_VALUE)));
-        holder.imagePreview.setImageURI(Uri.parse(cursor.getString(cursor.getColumnIndex(ExcursionTable.COLUMN_EXCURSION_URL))));
+        String url = cursor.getString(cursor.getColumnIndex(ExcursionTable.COLUMN_EXCURSION_URL));
+        if(!TextUtils.isEmpty(url))
+        {
+            Picasso.with(context).load(url).fit().centerCrop().into(holder.imagePreview);
+            // holder.imagePreview.setImageURI(Uri.parse()));
+
+        }
     }
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         ViewHolder holder = (ViewHolder) view.getTag();
-        populateView(holder, cursor, context);
+        populateViewExcursion(holder, cursor, context);
     }
 }

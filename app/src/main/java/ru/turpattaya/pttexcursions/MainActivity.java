@@ -25,7 +25,7 @@ import java.util.List;
 
 import ru.turpattaya.pttexcursions.fragment.AboutFragment;
 import ru.turpattaya.pttexcursions.fragment.ExcursionsFragment;
-import ru.turpattaya.pttexcursions.fragment.FreeTransfersFragment;
+import ru.turpattaya.pttexcursions.fragment.TransfersFragment;
 import ru.turpattaya.pttexcursions.fragment.TaxiFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -72,15 +72,13 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
-
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new ExcursionsFragment(), "Экскурсии");
-        adapter.addFragment(new TaxiFragment(), "Такси и Трансферы");
-        adapter.addFragment(new FreeTransfersFragment(), "Бесплатно");
+        adapter.addFragment(new TaxiFragment(), "Такси");
+        adapter.addFragment(new TransfersFragment(), "Трансферы");
         adapter.addFragment(new AboutFragment(), "О нас");
 
         viewPager.setAdapter(adapter);

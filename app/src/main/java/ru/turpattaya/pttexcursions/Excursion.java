@@ -6,8 +6,6 @@ package ru.turpattaya.pttexcursions;
 
 public class Excursion implements Comparable<Excursion> {
 
-
-
     private int imageViewitem;
     private String textExcursionItem;
     private String textPriceItem;
