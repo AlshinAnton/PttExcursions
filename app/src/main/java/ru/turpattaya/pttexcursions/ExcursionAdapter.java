@@ -12,8 +12,6 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import ru.turpattaya.pttexcursions.fragment.ExcursionTable;
-
 
 public class ExcursionAdapter extends CursorAdapter {
 

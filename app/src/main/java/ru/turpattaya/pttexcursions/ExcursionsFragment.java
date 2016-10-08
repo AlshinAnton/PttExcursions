@@ -1,4 +1,4 @@
-package ru.turpattaya.pttexcursions.fragment;
+package ru.turpattaya.pttexcursions;
 
 
 import android.database.Cursor;
@@ -8,10 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-
-import ru.turpattaya.pttexcursions.ExcursionAdapter;
-import ru.turpattaya.pttexcursions.MySQLiteHelper;
-import ru.turpattaya.pttexcursions.R;
 
 
 public class ExcursionsFragment extends Fragment {

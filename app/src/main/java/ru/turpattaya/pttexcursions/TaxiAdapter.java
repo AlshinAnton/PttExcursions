@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
 
-import ru.turpattaya.pttexcursions.fragment.TaxiTable;
-
 
 /**
  * Created by MSI on 07.10.2016.

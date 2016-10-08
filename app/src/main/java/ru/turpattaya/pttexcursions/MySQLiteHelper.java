@@ -5,9 +5,6 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
-
-import ru.turpattaya.pttexcursions.fragment.ExcursionTable;
-
 /**
  * Created by MSI on 04.10.2016.
  */

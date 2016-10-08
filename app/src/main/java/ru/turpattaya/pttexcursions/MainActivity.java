@@ -23,11 +23,6 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-import ru.turpattaya.pttexcursions.fragment.AboutFragment;
-import ru.turpattaya.pttexcursions.fragment.ExcursionsFragment;
-import ru.turpattaya.pttexcursions.fragment.TransfersFragment;
-import ru.turpattaya.pttexcursions.fragment.TaxiFragment;
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
 

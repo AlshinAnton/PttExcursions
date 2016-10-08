@@ -1,4 +1,4 @@
-package ru.turpattaya.pttexcursions.fragment;
+package ru.turpattaya.pttexcursions;
 
 
 import android.os.Bundle;
