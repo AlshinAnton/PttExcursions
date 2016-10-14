@@ -1,5 +1,9 @@
 package ru.turpattaya.pttexcursions;
 
+import android.view.View;
+import android.widget.TextView;
+import android.widget.ViewFlipper;
+
 /**
  * Created by MSI on 03.10.2016.
  */
@@ -9,6 +13,17 @@ public class Excursion implements Comparable<Excursion> {
     private int imageViewitem;
     private String textExcursionItem;
     private String textPriceItem;
+
+    private ViewFlipper viewFlipper;
+    private String pagetitleExcursionDetail;
+    private String contextExcursionDetail;
+
+    public Excursion(ViewFlipper viewFlipper, String pagetitleExcursionDetail, String contextExcursionDetail) {
+        this.viewFlipper = viewFlipper;
+        this.pagetitleExcursionDetail = pagetitleExcursionDetail;
+        this.contextExcursionDetail = contextExcursionDetail;
+
+    }
 
     public Excursion(int imageViewItem, String textExcursionItem, String textPriceItem) {
         this.imageViewitem = imageViewItem;
@@ -43,5 +58,29 @@ public class Excursion implements Comparable<Excursion> {
     @Override
     public int compareTo(Excursion another) {
         return getTextExcursionItem().compareTo(another.getTextExcursionItem());
+    }
+
+    public ViewFlipper getViewFlipper() {
+        return viewFlipper;
+    }
+
+    public void setViewFlipper(ViewFlipper viewFlipper) {
+        this.viewFlipper = viewFlipper;
+    }
+
+    public String getPagetitleExcursionDetail() {
+        return pagetitleExcursionDetail;
+    }
+
+    public void setPagetitleExcursionDetail(String pagetitleExcursionDetail) {
+        this.pagetitleExcursionDetail = pagetitleExcursionDetail;
+    }
+
+    public String getContextExcursionDetail() {
+        return contextExcursionDetail;
+    }
+
+    public void setContextExcursionDetail(String contextExcursionDetail) {
+        this.contextExcursionDetail = contextExcursionDetail;
     }
 }

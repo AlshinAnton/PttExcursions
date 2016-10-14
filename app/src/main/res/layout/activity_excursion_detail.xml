@@ -10,16 +10,55 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ru.turpattaya.pttexcursions.ExcursionDetail">
 
-    <ImageView
-        android:id="@+id/photo_excursion_detail"
-        android:layout_width="match_parent"
+    <ViewFlipper
         android:layout_height="wrap_content"
-        />
+        android:layout_width="wrap_content"
+        android:id="@+id/viewFlipper_excursion_detail"
+        android:layout_centerHorizontal="true"
+        android:autoStart="true"
+        android:flipInterval="2000"
+        android:inAnimation="@anim/flipin"
+        android:outAnimation="@anim/flipout">
+
+        <ImageView
+            android:id="@+id/image1_excursion_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/image2_excursion_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/image3_excursion_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/image4_excursion_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/image5_excursion_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+
+    </ViewFlipper>
 
     <TextView
-        android:id="@+id/excursion_detail_text"
+        android:id="@+id/excursion_detail_pagetitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/photo_excursion_detail"/>
+        android:layout_below="@+id/viewFlipper_excursion_detail"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/excursion_detail_context"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/excursion_detail_pagetitle"
+        android:layout_centerHorizontal="true"/>
+
 
 </RelativeLayout>

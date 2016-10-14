@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new ExcursionsFragment(), "Экскурсии");
+        adapter.addFragment(new ExcursionsListFragment(), "Экскурсии");
         adapter.addFragment(new TaxiFragment(), "Такси");
         adapter.addFragment(new TransfersFragment(), "Трансферы");
         adapter.addFragment(new AboutFragment(), "О нас");
@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
     }
+
 
     static class ViewPagerAdapter extends FragmentPagerAdapter {
 

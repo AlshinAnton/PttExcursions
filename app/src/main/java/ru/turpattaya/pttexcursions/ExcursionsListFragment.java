@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 
-public class ExcursionsFragment extends Fragment {
+public class ExcursionsListFragment extends Fragment {
 
 
-    public ExcursionsFragment() {
+    public ExcursionsListFragment() {
         // Required empty public constructor
     }
 
@@ -21,7 +21,8 @@ public class ExcursionsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_excursions, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_list_excursions, container, false);
 
         ListView list = (ListView) view.findViewById(R.id.list_excursion);
 
@@ -43,5 +44,6 @@ public class ExcursionsFragment extends Fragment {
 
         return view;
     }
+
 
 }
