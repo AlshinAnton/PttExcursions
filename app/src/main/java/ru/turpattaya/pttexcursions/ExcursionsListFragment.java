@@ -1,8 +1,10 @@
 package ru.turpattaya.pttexcursions;
 
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.percent.PercentRelativeLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.ListView;
 
 public class ExcursionsListFragment extends Fragment {
 
+    PercentRelativeLayout percentRelativeLayoutItemExcursion;
 
     public ExcursionsListFragment() {
         // Required empty public constructor
@@ -20,8 +23,14 @@ public class ExcursionsListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
 
+
+/*        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        }).start();*/
         View view = inflater.inflate(R.layout.fragment_list_excursions, container, false);
 
         ListView list = (ListView) view.findViewById(R.id.list_excursion);
@@ -41,6 +50,9 @@ public class ExcursionsListFragment extends Fragment {
         ExcursionAdapter adapter = new ExcursionAdapter(getContext(), cursor);
 
         list.setAdapter(adapter);
+
+        percentRelativeLayoutItemExcursion = (PercentRelativeLayout) view.findViewById(R.id.container);
+
 
         return view;
     }

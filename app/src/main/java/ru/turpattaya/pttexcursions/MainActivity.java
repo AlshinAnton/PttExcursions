@@ -1,9 +1,11 @@
 package ru.turpattaya.pttexcursions;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
+import android.support.percent.PercentRelativeLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -34,12 +36,17 @@ public class MainActivity extends AppCompatActivity
     private List<Excursion> data = new ArrayList<>();
     private ExcursionAdapter adapter;
 
+    PercentRelativeLayout percentRelativeLayoutItemExcursion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
+
+        percentRelativeLayoutItemExcursion = (PercentRelativeLayout) findViewById(R.id.container);
+
 
         setupViewPager(viewPager);// будет добавлять объекты в адаптер
         tabLayout.setupWithViewPager(viewPager);
@@ -81,6 +88,17 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+    }
+
+    public void startDetailActivity(View view) {
+        percentRelativeLayoutItemExcursion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ExcursionDetail.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

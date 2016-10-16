@@ -7,8 +7,9 @@ import android.widget.ViewFlipper;
 
 public class ExcursionDetail extends AppCompatActivity {
 
-
-
+    ViewFlipper viewFlipper;
+    TextView pagetitleExcursionDetail;
+    TextView contextExcursionDetail;
 
 
     @Override
@@ -16,8 +17,10 @@ public class ExcursionDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_excursion_detail);
 
-/*        final ViewFlipper viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper_excursion_detail);
-        TextView pagetitleExcursionDetail = (TextView) findViewById(R.id.excursion_detail_pagetitle);
-        TextView contextExcursionDetail = (TextView) findViewById(R.id.excursion_detail_context);*/
+        viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper_excursion_detail);
+        pagetitleExcursionDetail = (TextView) findViewById(R.id.excursion_detail_pagetitle);
+        contextExcursionDetail = (TextView) findViewById(R.id.excursion_detail_context);
+
+
     }
 }
